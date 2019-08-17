@@ -22,10 +22,10 @@ wavData = pd.DataFrame(data)
 if len(wavData.columns) == 2:
     print('Stereo .wav file\n')
     wavData.columns = ['R', 'L']
-    stereo_R = wavData['R']
-    stereo_L = wavData['L']
+    stereo_R = pd.DataFrame(wavData['R'])
+    stereo_L = pd.DataFrame(wavData['L'])
     print('Saving...\n')
-    stereo_R.to_csv(str(input_filename[:-4]+"_Output_stereo_R.csv"), mode='w')
+    stereo_R.to_csv(str(input_filename[:-4]+"Output_stereo_R.csv"), mode='w')
     stereo_L.to_csv(str(input_filename[:-4]+"Output_stereo_L.csv"), mode='w')
     #wavData.to_csv("Output_stereo_RL.csv", mode='w')
     print('Save is done Output_stereo_R.csv , Output_stereo_L.csv')
